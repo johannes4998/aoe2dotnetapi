@@ -23,6 +23,11 @@ varibales like civ into humanreadable names
 
 This is my first attempt at a package
 
+``` r
+devtools::install_github("johannes4998/aoe2dotnetapi")
+library(aoe2dotnetapi)
+```
+
 # Credits
 
 Data from <https://aoe2.net/#api>

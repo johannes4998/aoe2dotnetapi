@@ -12,9 +12,9 @@
 #' @export
 #' @examples
 #' #Rating History of GL. TheViper with profile_id
-#' aoe2_player_rating_history(player_id=196240, count=5)
+#' aoe2_player_rating_history(player_id="196240", count=5)
 #' #Rating History of GL. TheViper with steam_id
-#' aoe2_player_rating_history(player_id=76561197984749679, count=5)
+#' aoe2_player_rating_history(player_id="76561197984749679", count=5)
 
 aoe2_player_rating_history <- function(player_id, start=0, count=10, leaderboard_id=3, game="aoe2de") {
 

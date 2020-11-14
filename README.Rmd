@@ -27,6 +27,11 @@ Aoe2.net has a lot of player data for Age of Empires 2: Defenitive Edition. Thro
 
 This is my first attempt at a package
 
+```{r, message=FALSE}
+devtools::install_github("johannes4998/aoe2dotnetapi")
+library(aoe2dotnetapi)
+```
+
 # Credits
 
 Data from https://aoe2.net/#api

@@ -19,6 +19,7 @@ aoe2_player_match_history_all <- function(player_id, game="aoe2de", id_to_text =
 
   start=1001
   count=1000
+  player_id = player_id
 
   data <- aoe2_player_match_history(player_id = player_id, start=0, count = count)
 

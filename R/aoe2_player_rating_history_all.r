@@ -14,17 +14,18 @@
 #' #Rating History of GL. TheViper with steam_id
 #' aoe2_player_rating_history(player_id=76561197984749679, count=5)
 
-aoe2_player_rating_history_all <- function(player_id, game="aoe2de", id_to_text = TRUE) {
+aoe2_player_rating_history_all <- function(player_id, leaderboard_id=3, game="aoe2de") {
 
   start=1001
   count=1000
+  leaderboard_id = leaderboard_id
 
   data <- aoe2_player_rating_history(player_id = player_id, start=0, count = count)
 
   data_part <- data
 
   while (nrow(data_part) == count) {
-    data_part <-  aoe2_player_rating_history(player_id = player_id, start = start, count = count)
+    data_part <-  aoe2_player_rating_history(player_id = player_id, start = start, count = count, leaderboard_id = leaderboard_id)
     data <- rbind(data, data_part)
     start <- start + count
   }
