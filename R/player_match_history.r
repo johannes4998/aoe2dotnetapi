@@ -30,7 +30,7 @@ player_match_history <- function(player_id, start=0, count=10, game="aoe2de", id
     paste0("https://aoe2.net/api/player/matches",
            "?game=",game,
            id,
-           "&start",start,
+           "&start=",start,
            "&count=",count)
   )
 

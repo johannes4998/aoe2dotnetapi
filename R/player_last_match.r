@@ -22,7 +22,7 @@ player_last_match <- function(player_id, game="aoe2de") {
   }
 
   jsonlite::fromJSON(
-    paste0("https://aoe2.net/api/lastmatch",
+    paste0("https://aoe2.net/api/player/lastmatch",
                      "?game=",game,
                      id)
     )
