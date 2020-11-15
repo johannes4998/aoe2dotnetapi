@@ -15,7 +15,7 @@
 
 aoe2_leaderboard_all <- function(game="aoe2de", leaderboard_id=3) {
 
-  start=1
+  start=10001
   count=10000
 
   data <- aoe2_leaderboard(start = start, count = count, game="aoe2de", leaderboard_id=3)$leaderboard
