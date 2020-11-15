@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# aoe2deapi for aoe2.net
+# aoe2deapi for aoe2.net <img src='man/figures/aoe2dotnetapi.png' align="right" height="131.5" /></a>
 
 <!-- badges: start -->
 
@@ -33,7 +33,7 @@ library(aoe2dotnetapi)
 Data from <https://aoe2.net/#api>
 
 Age of Empires II: HD© and Age of Empires II: Definitive Edition©
-Microsoft Corporation. aoe2deapi-package was created under Microsoft’s
-Game Content Usage Rules Game Content Usage Rules using assets from Age
-of Empires II: Definitive Edition, and it is not endorsed by or
-affiliated with Microsoft.
+Microsoft Corporation. aoe2dotnetapi-package was created under
+Microsoft’s Game Content Usage Rules Game Content Usage Rules using
+assets from Age of Empires II: Definitive Edition, and it is not
+endorsed by or affiliated with Microsoft.
