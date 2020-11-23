@@ -20,13 +20,14 @@ aoe2_player_match_history_all <- function(player_id, game="aoe2de", id_to_text =
   start=1001
   count=1000
   player_id = player_id
+  id_to_text = id_to_text
 
   data <- aoe2_player_match_history(player_id = player_id, start=0, count = count)
 
   data_part <- data
 
   while (nrow(data_part) == count) {
-    data_part <-  aoe2_player_match_history(player_id = player_id, start = start, count = count)
+    data_part <-  aoe2_player_match_history(player_id = player_id, start = start, count = count, id_to_text = id_to_text)
     data <- rbind(data, data_part)
     start <- start + count
   }

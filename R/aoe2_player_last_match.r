@@ -5,6 +5,7 @@
 #' More Information about aoe2.net api at https://aoe2.net/#api
 #' @param player_id Either profile_id or 64 bit steam id. Function takes either value and changes the api call accordingly
 #' @param game Default is aoe2de since the api is mostly used for that.
+#' @param id_to_text Translates columns with number code to humanreadable text. Like civ ids to civ names.
 #' @keywords aoe2_player_rating
 #' @export
 #' @examples
@@ -13,7 +14,7 @@
 #' #Last Match of GL. TheViper with steam_id
 #' aoe2_player_last_match(player_id=76561197984749679)
 
-aoe2_player_last_match <- function(player_id, game="aoe2de") {
+aoe2_player_last_match <- function(player_id, game="aoe2de", id_to_text=T) {
 
   id <- if (nchar(player_id)!=17) {
     paste0("&profile_id=",player_id)
@@ -21,9 +22,40 @@ aoe2_player_last_match <- function(player_id, game="aoe2de") {
     paste0("&steam_id=",player_id)
   }
 
-  jsonlite::fromJSON(
+  data <- jsonlite::fromJSON(
     paste0("https://aoe2.net/api/player/lastmatch",
                      "?game=",game,
                      id)
-    )
+    )$last_match
+
+  data[sapply(data, is.null)] <- NA
+  match_data <- data.frame(matrix(unlist(data[1:40]), ncol=length(data[1:40]), byrow=T))
+  colnames(match_data) <- names(data[1:40])
+
+  match_data$players <- data[41]
+
+  data <- match_data
+
+  if (id_to_text == TRUE) {
+
+    names_list <- names(lobby_translation)
+    n_values <- length(names_list)
+
+    for (i in 1:n_values) {
+      data <- merge(lobby_translation[[i]], data, by.x ="id", by.y = names_list[i])
+
+      colnames(data)[colnames(data)=="string"] <- names_list[i]
+      data["id"] <- NULL
+    }
+
+    for (i in 1:nrow(data)) {
+      data$players[[i]] <- merge(match_translation, data$players[[i]], by.x="id", by.y="civ")
+      colnames(data$players[[i]])[2] <- "civ"
+    }
+
+    data
+  }
+  else {
+    data
+  }
 }
