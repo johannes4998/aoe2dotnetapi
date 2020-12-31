@@ -17,19 +17,24 @@
 
 aoe2_player_match_history_all <- function(player_id, game="aoe2de", id_to_text = TRUE) {
 
-  start=1001
+  start=0
   count=1000
   player_id = player_id
   id_to_text = id_to_text
+  data = NULL
 
-  data <- aoe2_player_match_history(player_id = player_id, start=0, count = count)
-
-  data_part <- data
-
-  while (nrow(data_part) == count) {
-    data_part <-  aoe2_player_match_history(player_id = player_id, start = start, count = count, id_to_text = id_to_text)
+  repeat{
+    data_part <-  aoe2dotnetapi::aoe2_player_match_history(player_id = player_id, start = start, count = count, id_to_text = id_to_text)
     data <- rbind(data, data_part)
+
     start <- start + count
+
+    if(nrow(data_part) < count){
+      print(paste(nrow(data), "Matches downloaded. Download finished."))
+      return(data)
+      break
+    }
+
+    print(paste(nrow(data), "Matches downloaded. At least one more round."))
   }
-  data
 }

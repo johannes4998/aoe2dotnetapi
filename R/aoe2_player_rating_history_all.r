@@ -14,20 +14,28 @@
 #' #Rating History of GL. TheViper with steam_id
 #' aoe2_player_rating_history(player_id=76561197984749679, count=5)
 
-aoe2_player_rating_history_all <- function(player_id, leaderboard_id=3, game="aoe2de") {
+aoe2_player_rating_history_all <- function(player_id, game="aoe2de", leaderboard_id = 3) {
 
-  start=1001
+  start=0
   count=1000
+  player_id = player_id
+  game=game
   leaderboard_id = leaderboard_id
+  data = NULL
 
-  data <- aoe2_player_rating_history(player_id = player_id, start=0, count = count)
 
-  data_part <- data
-
-  while (nrow(data_part) == count) {
-    data_part <-  aoe2_player_rating_history(player_id = player_id, start = start, count = count, leaderboard_id = leaderboard_id)
+  repeat{
+    data_part <-  aoe2dotnetapi::aoe2_player_rating_history(player_id = player_id, start = start, count = count, game="aoe2de", leaderboard_id = 3)
     data <- rbind(data, data_part)
+
     start <- start + count
+
+    if(nrow(data_part) < count){
+      print(paste(nrow(data), "Matches downloaded. Download finished."))
+      return(data)
+      break
+    }
+
+    print(paste(nrow(data), "Matches downloaded. At least one more round."))
   }
-  data
 }

@@ -15,17 +15,22 @@
 
 aoe2_leaderboard_all <- function(game="aoe2de", leaderboard_id=3) {
 
-  start=10001
+  start=1
   count=10000
+  data = NULL
+  repeat{
 
-  data <- aoe2_leaderboard(start = start, count = count, game="aoe2de", leaderboard_id=3)$leaderboard
+    data_part =  aoe2dotnetapi::aoe2_leaderboard(start = start, count = count, game="aoe2de", leaderboard_id=3)$leaderboard
+    data = rbind(data, data_part)
+    start = start + count
 
-  data_part <- data
+    if(nrow(data_part) < count){
+      print(paste(nrow(data), "Players downloaded. Download finished."))
+      return(data)
+      break
+    }
 
-  while (nrow(data_part) == count) {
-    data_part <-  aoe2_leaderboard(start = start, count = count, game="aoe2de", leaderboard_id=3)$leaderboard
-    data <- rbind(data, data_part)
-    start <- start + count
+    print(paste(nrow(data), "Players downloaded. At least one more round."))
   }
-  data
+
 }
