@@ -34,26 +34,5 @@ aoe2_player_match_history <- function(player_id, start=0, count=10, game="aoe2de
            "&count=",count)
   )
 
-  if (id_to_text == TRUE) {
-
-    names_list <- names(lobby_translation)
-    n_values <- length(names_list)
-
-    for (i in 1:n_values) {
-      data <- merge(lobby_translation[[i]], data, by.x ="id", by.y = names_list[i])
-
-      colnames(data)[colnames(data)=="string"] <- names_list[i]
-      data["id"] <- NULL
-    }
-
-    for (i in 1:nrow(data)) {
-      data$players[[i]] <- merge(match_translation, data$players[i], by.x="id", by.y="civ")
-      colnames(data$players[[i]])[2] <- "civ"
-    }
-
-    data
-  }
-  else {
-    data
-  }
+  id_to_text(data=data,id_to_text=id_to_text)
 }

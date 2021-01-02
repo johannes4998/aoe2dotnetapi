@@ -36,26 +36,5 @@ aoe2_player_last_match <- function(player_id, game="aoe2de", id_to_text=T) {
 
   data <- match_data
 
-  if (id_to_text == TRUE) {
-
-    names_list <- names(lobby_translation)
-    n_values <- length(names_list)
-
-    for (i in 1:n_values) {
-      data <- merge(lobby_translation[[i]], data, by.x ="id", by.y = names_list[i])
-
-      colnames(data)[colnames(data)=="string"] <- names_list[i]
-      data["id"] <- NULL
-    }
-
-    for (i in 1:nrow(data)) {
-      data$players[[i]] <- merge(match_translation, data$players[[i]], by.x="id", by.y="civ")
-      colnames(data$players[[i]])[2] <- "civ"
-    }
-
-    data
-  }
-  else {
-    data
-  }
+  id_to_text(data=data,id_to_text=id_to_text)
 }
