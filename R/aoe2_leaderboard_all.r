@@ -18,9 +18,10 @@ aoe2_leaderboard_all <- function(game="aoe2de", leaderboard_id=3) {
   start=1
   count=10000
   data = NULL
+  leaderboard_id = leaderboard_id
   repeat{
 
-    data_part =  aoe2dotnetapi::aoe2_leaderboard(start = start, count = count, game="aoe2de", leaderboard_id=3)$leaderboard
+    data_part =  aoe2dotnetapi::aoe2_leaderboard(start = start, count = count, game="aoe2de", leaderboard_id=leaderboard_id)$leaderboard
     data = rbind(data, data_part)
     start = start + count
 

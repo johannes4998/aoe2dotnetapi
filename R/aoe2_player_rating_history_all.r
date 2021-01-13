@@ -25,7 +25,11 @@ aoe2_player_rating_history_all <- function(player_id, game="aoe2de", leaderboard
 
 
   repeat{
-    data_part <-  aoe2dotnetapi::aoe2_player_rating_history(player_id = player_id, start = start, count = count, game="aoe2de", leaderboard_id = 3)
+    data_part <-  aoe2dotnetapi::aoe2_player_rating_history(player_id = player_id,
+                                                            start = start,
+                                                            count = count,
+                                                            game="aoe2de",
+                                                            leaderboard_id = leaderboard_id)
     data <- rbind(data, data_part)
 
     start <- start + count
