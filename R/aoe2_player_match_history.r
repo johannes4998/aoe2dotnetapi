@@ -16,7 +16,7 @@
 #' #Rating Match History of GL. TheViper with steam_id
 #' player_match_history(player_id=76561197984749679, count=5)
 
-aoe2_player_match_history <- function(player_id, start=0, count=10, game="aoe2de", id_to_text = TRUE) {
+aoe2_player_match_history <- function(player_id, start=0, count=10, game="aoe2de", id_to_text = .pkgenv$id_to_text) {
 
   id = if (nchar(player_id)!=17) {
     paste0("&profile_id=",player_id)

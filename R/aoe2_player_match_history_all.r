@@ -15,7 +15,7 @@
 #' aoe2_player_match_history_all(player_id="76561197984749679")
 
 
-aoe2_player_match_history_all <- function(player_id, game="aoe2de", id_to_text = TRUE) {
+aoe2_player_match_history_all <- function(player_id, game="aoe2de", id_to_text = .pkgenv$id_to_text) {
 
   start=0
   count=1000
