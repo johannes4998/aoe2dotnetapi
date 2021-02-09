@@ -4,10 +4,12 @@
 \alias{aoe2_match}
 \title{aoe2_match}
 \usage{
-aoe2_match(match_id)
+aoe2_match(match_id, id_to_text = .pkgenv$id_to_text)
 }
 \arguments{
 \item{match_id}{Either match_id or uuid of the match. match_id is the same as the Lobby code. Function takes either value and changes the api call accordingly.}
+
+\item{id_to_text}{Translates columns with number code to humanreadable text. Like civ ids to civ names.}
 }
 \description{
 This function gives you list of the match settings and match details.

@@ -4,7 +4,12 @@
 \alias{aoe2_matches}
 \title{aoe2_matches}
 \usage{
-aoe2_matches(date, count = 10, game = "aoe2de")
+aoe2_matches(
+  date,
+  count = 10,
+  game = "aoe2de",
+  id_to_text = .pkgenv$id_to_text
+)
 }
 \arguments{
 \item{date}{Date either as unix epoch or in this format "2013-09-16 2:13:46 EST"}
@@ -12,6 +17,8 @@ aoe2_matches(date, count = 10, game = "aoe2de")
 \item{count}{Number of games to download.}
 
 \item{game}{Default is aoe2de since the api is mostly used for that.}
+
+\item{id_to_text}{Translates columns with number code to humanreadable text. Like civ ids to civ names.}
 }
 \description{
 This function gives you data.frame of the player rating if the player has been active in the last 28 days.

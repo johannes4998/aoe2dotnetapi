@@ -4,14 +4,14 @@
 \alias{aoe2_player_rating_history_all}
 \title{aoe2_player_rating_history_all}
 \usage{
-aoe2_player_rating_history_all(player_id, leaderboard_id = 3, game = "aoe2de")
+aoe2_player_rating_history_all(player_id, game = "aoe2de", leaderboard_id = 3)
 }
 \arguments{
 \item{player_id}{Either profile_id or 64 bit steam id. Function takes either value and changes the api call accordingly.}
 
-\item{leaderboard_id}{Default is 3 for 1v1 Random Map, 4 is Team Random Map.}
-
 \item{game}{Default is aoe2de since the api is mostly used for that.}
+
+\item{leaderboard_id}{Default is 3 for 1v1 Random Map, 4 is Team Random Map.}
 }
 \description{
 This function gives you data.frame of the player rating if the player has been active in the last 28 days.

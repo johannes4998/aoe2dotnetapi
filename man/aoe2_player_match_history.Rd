@@ -9,7 +9,7 @@ aoe2_player_match_history(
   start = 0,
   count = 10,
   game = "aoe2de",
-  id_to_text = TRUE
+  id_to_text = .pkgenv$id_to_text
 )
 }
 \arguments{

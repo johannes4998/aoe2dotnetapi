@@ -4,12 +4,18 @@
 \alias{aoe2_player_last_match}
 \title{aoe2_player_last_match}
 \usage{
-aoe2_player_last_match(player_id, game = "aoe2de")
+aoe2_player_last_match(
+  player_id,
+  game = "aoe2de",
+  id_to_text = .pkgenv$id_to_text
+)
 }
 \arguments{
 \item{player_id}{Either profile_id or 64 bit steam id. Function takes either value and changes the api call accordingly}
 
 \item{game}{Default is aoe2de since the api is mostly used for that.}
+
+\item{id_to_text}{Translates columns with number code to humanreadable text. Like civ ids to civ names.}
 }
 \description{
 This function gives you data.frame of the player rating if the player has been active in the last 28 days.

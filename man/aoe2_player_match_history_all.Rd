@@ -4,7 +4,11 @@
 \alias{aoe2_player_match_history_all}
 \title{aoe2_player_match_history_all}
 \usage{
-aoe2_player_match_history_all(player_id, game = "aoe2de", id_to_text = TRUE)
+aoe2_player_match_history_all(
+  player_id,
+  game = "aoe2de",
+  id_to_text = .pkgenv$id_to_text
+)
 }
 \arguments{
 \item{player_id}{Either profile_id or 64 bit steam id. Function takes either value and changes the api call accordingly}
