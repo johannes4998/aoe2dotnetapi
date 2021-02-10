@@ -1,4 +1,4 @@
-#' aoe2_player_last_match
+#' aoe2_player_profile
 #'
 #' This function gives you data.frame of the player rating if the player has been active in the last 28 days.
 #'
@@ -29,5 +29,5 @@ aoe2_player_profile <- function(player_id, game="aoe2de") {
 
   data[[6]] <- NULL
   data <- as.data.frame(data, stringsAsFactors =  F)
-  #data.frame(profile_id = data$profile_id,data$steam_id,data$name,data$clan,data$country, stringsAsFactors = F)
+
 }
