@@ -29,11 +29,11 @@ aoe2_player_profile <- function(player_id, game="aoe2de") {
 
   profile <- data.frame(profile_id=NA, steam_id=NA, name=NA, clan=NA, country=NA,stringsAsFactors = F)
 
-  profile$profile_id <- ifelse(is.null(data2[[1]]),NA,data2[[1]])
-  profile$steam_id<- ifelse(is.null(data2[[2]]),NA,data2[[2]])
-  profile$name <- ifelse(is.null(data2[[3]]),NA,data2[[3]])
-  profile$clan <- ifelse(is.null(data2[["clan"]]),NA,data2[["clan"]])
-  profile$country <- ifelse(is.null(data2[["country"]]),NA,data2[["country"]])
+  profile$profile_id <- ifelse(is.null(data[[1]]),NA,data[[1]])
+  profile$steam_id<- ifelse(is.null(data[[2]]),NA,data[[2]])
+  profile$name <- ifelse(is.null(data[[3]]),NA,data[[3]])
+  profile$clan <- ifelse(is.null(data[["clan"]]),NA,data[["clan"]])
+  profile$country <- ifelse(is.null(data[["country"]]),NA,data[["country"]])
 
   return(profile)
 }
