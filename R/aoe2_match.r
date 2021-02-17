@@ -13,7 +13,7 @@
 #' #Hera vs Liereyy Champions League
 #' aoe2_match(match_id="39b80e7a-e4df-974e-90f0-cf4fe2be6561")
 
-aoe2_match <- function(match_id, id_to_text=.pkgenv$id_to_text) {
+aoe2_match <- function(match_id, id_to_text= id_to_text) {
 
   id <- if (!grepl("[a-z]", match_id)) {
     paste0("&match_id=",match_id)

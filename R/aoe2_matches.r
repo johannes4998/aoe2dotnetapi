@@ -13,7 +13,7 @@
 #' aoe2_matches(date="2020-11-09 12:49:39 UTC", count=5)
 #' aoe2_matches(date="1596775000", count=5) # recommended way
 
-aoe2_matches <- function(date, count=10, game="aoe2de", id_to_text = .pkgenv$id_to_text) {
+aoe2_matches <- function(date, count=10, game="aoe2de", id_to_text = id_to_text) {
 
   date1 <- if (grepl("-",date)) {
     paste0("&since=",as.numeric(as.POSIXct(date)))
