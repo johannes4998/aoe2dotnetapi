@@ -4,12 +4,7 @@
 \alias{aoe2_matches}
 \title{aoe2_matches}
 \usage{
-aoe2_matches(
-  date,
-  count = 10,
-  game = "aoe2de",
-  id_to_text = .pkgenv$id_to_text
-)
+aoe2_matches(date, count = 10, game = "aoe2de", id_to_text = id_to_text)
 }
 \arguments{
 \item{date}{Date either as unix epoch or in this format "2013-09-16 2:13:46 EST"}

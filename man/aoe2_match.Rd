@@ -4,7 +4,7 @@
 \alias{aoe2_match}
 \title{aoe2_match}
 \usage{
-aoe2_match(match_id, id_to_text = .pkgenv$id_to_text)
+aoe2_match(match_id, id_to_text = id_to_text)
 }
 \arguments{
 \item{match_id}{Either match_id or uuid of the match. match_id is the same as the Lobby code. Function takes either value and changes the api call accordingly.}

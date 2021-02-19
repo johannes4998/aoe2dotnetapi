@@ -4,7 +4,7 @@
 \alias{id_to_text}
 \title{id_to_text}
 \usage{
-id_to_text(data = data, id_to_text = .pkgenv$id_to_text)
+id_to_text(data = data, id_to_text = id_to_text)
 }
 \arguments{
 \item{data}{aoe2.net output}

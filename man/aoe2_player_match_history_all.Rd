@@ -7,7 +7,7 @@
 aoe2_player_match_history_all(
   player_id,
   game = "aoe2de",
-  id_to_text = .pkgenv$id_to_text
+  id_to_text = id_to_text
 )
 }
 \arguments{

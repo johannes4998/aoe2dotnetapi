@@ -6,6 +6,7 @@
 #' @param data aoe2.net output
 #' @param id_to_text Translates columns with number code to humanreadable text. Like civ ids to civ names.
 #' @keywords id_to_text
+#' @export
 
 id_to_text <- function(data=data, id_to_text=id_to_text) {
   if (id_to_text) {
