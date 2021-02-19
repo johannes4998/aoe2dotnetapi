@@ -29,7 +29,7 @@ aoe2_player_last_match <- function(player_id, game="aoe2de", id_to_text = id_to_
     )$last_match
 
   data[sapply(data, is.null)] <- NA
-  match_data <- data.frame(matrix(unlist(data[1:40]), ncol=length(data[1:40]), byrow=T))
+  match_data <- data.frame(matrix(unlist(data[1:40]), ncol=length(data[1:40]), byrow=T), stringsAsFactors = F)
   colnames(match_data) <- names(data[1:40])
 
   match_data$players <- data[41]
