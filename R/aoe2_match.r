@@ -27,7 +27,7 @@ aoe2_match <- function(match_id, id_to_text= id_to_text) {
                      )
 
   data[sapply(data, is.null)] <- NA
-  match_data <- data.frame(matrix(unlist(data[1:40]), ncol=length(data[1:40]), byrow=T))
+  match_data <- data.frame(matrix(unlist(data[1:40]), ncol=length(data[1:40]), byrow=T), stringsAsFactors = F)
   colnames(match_data) <- names(data[1:40])
 
   match_data$players <- data[41]
