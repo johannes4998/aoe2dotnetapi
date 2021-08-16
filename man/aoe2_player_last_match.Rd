@@ -4,7 +4,7 @@
 \alias{aoe2_player_last_match}
 \title{aoe2_player_last_match}
 \usage{
-aoe2_player_last_match(player_id, game = "aoe2de", id_to_text = id_to_text)
+aoe2_player_last_match(player_id, game = "aoe2de", id_to_text = TRUE)
 }
 \arguments{
 \item{player_id}{Either profile_id or 64 bit steam id. Function takes either value and changes the api call accordingly}

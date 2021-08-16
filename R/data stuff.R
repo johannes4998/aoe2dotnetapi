@@ -5,7 +5,7 @@
 
 
 # data <- jsonlite::fromJSON("https://aoe2.net/api/strings?game=aoe2de&language=en")
-
+#
 # match_translation <- data$civ
 
 # # "lobby_translation"
@@ -24,6 +24,6 @@
 #
 # rm(data)
 #
-# save(lobby_translation,lobby_translation_pre_lotw, match_translation, match_translation_pre_lotw, match_translation_dawnOfDukes, file = "data/sysdata.rda")
+# save(lobby_translation, match_translation, file = "data/sysdata.rda")
 #
 # rm(list = ls())

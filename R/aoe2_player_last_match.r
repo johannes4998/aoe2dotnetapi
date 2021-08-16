@@ -14,7 +14,7 @@
 #' #Last Match of GL. TheViper with steam_id
 #' aoe2_player_last_match(player_id=76561197984749679)
 
-aoe2_player_last_match <- function(player_id, game="aoe2de", id_to_text = id_to_text) {
+aoe2_player_last_match <- function(player_id, game = "aoe2de", id_to_text = TRUE) {
 
   id <- if (nchar(player_id)!=17) {
     paste0("&profile_id=",player_id)
@@ -36,5 +36,5 @@ aoe2_player_last_match <- function(player_id, game="aoe2de", id_to_text = id_to_
 
   data <- match_data
 
-  id_to_text(data=data,id_to_text=id_to_text)
+  id_to_text(data = data, id_to_text = id_to_text)
 }
